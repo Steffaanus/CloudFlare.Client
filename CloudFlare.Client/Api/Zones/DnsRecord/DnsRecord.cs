@@ -29,16 +29,16 @@ namespace CloudFlare.Client.Api.Zones.DnsRecord
         public string Name { get; set; }
 
         /// <summary>
+        /// Comment of the record
+        /// </summary>
+        [JsonProperty("comment")]
+        public string Comment { get; set; }
+
+        /// <summary>
         /// Content of the record
         /// </summary>
         [JsonProperty("content")]
         public string Content { get; set; }
-
-        /// <summary>
-        /// DNS record comment
-        /// </summary>
-        [JsonProperty("comment")]
-        public string Comment { get; set; }
 
         /// <summary>
         /// DNS record tags

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using CloudFlare.Client.Api.Display;
 using CloudFlare.Client.Api.Parameters;
@@ -237,7 +236,7 @@ namespace CloudFlare.Client.Test.Zones
             {
                 Name = "new.tothnet.hu",
                 Comment = "new comment",
-                Tags = new List<string>() { "1", "2"}
+                Tags = new[] { "1", "2" }
             };
 
             _wireMockServer
@@ -265,8 +264,7 @@ namespace CloudFlare.Client.Test.Zones
             update.Result.Name.Should().BeEquivalentTo("new.tothnet.hu");
             update.Result.Comment.Should().BeEquivalentTo("new comment");
             update.Result.Tags.Count.Should().Be(2);
-            update.Result.Tags.Contains("1").Should().Be(true);
-            update.Result.Tags.Contains("2").Should().Be(true);
+            update.Result.Tags.Should().BeEquivalentTo("1", "2");
         }
 
         [Fact]

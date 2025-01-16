@@ -18,7 +18,7 @@ namespace CloudFlare.Client.Test.TestData
                 ModifiedDate = DateTime.UtcNow,
                 Name = "tothnet.hu",
                 Comment = "comment",
-                Tags = new List<string>(),
+                Tags = new[] { "A", "B" },
                 Proxiable = true,
                 Proxied = false,
                 Priority = 10,
